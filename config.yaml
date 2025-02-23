@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: envio-indexer
+networks:
+- id: 11155111
+  start_block: 0
+  contracts:
+  - name: bidding
+    address:
+    - 0xDFeAAB3b097a8c00C3a886f8D57Da5ba6D711ab5
+    handler: src/EventHandlers.ts
+    events:
+    - event: LaunchPending(address token)
+    - event: LauncherChanged(address indexed oldLauncher, address indexed newLauncher)
+    - event: OwnerChanged(address indexed oldOwner, address indexed newOwner)
+    - event: PendingOwnerSet(address indexed oldPendingOwner, address indexed newPendingOwner)
+    - event: Poolstate(address indexed token, uint256 ETHResever, uint256 tokenReserve)
+    - event: PriceChanged(address indexed token, uint256 newPrice, uint256 circulatingSupply)
+    - event: TokenCreate(address tokenAddress, uint256 tokenIndex, address creator)
+    - event: TokenLaunched(address indexed token)
+    - event: TokenPurchased(address indexed token, address indexed buyer, uint256 ethAmount, uint256 tokenAmount, uint256 tokenReserve)
+    - event: TokenSold(address indexed token, address indexed seller, uint256 ethAmount, uint256 tokenAmount)
+rollback_on_reorg: false

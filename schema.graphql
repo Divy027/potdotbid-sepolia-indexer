@@ -1,0 +1,68 @@
+type Bidding_LaunchPending {
+  id: ID!
+  token: String!
+}
+
+type Bidding_LauncherChanged {
+  id: ID!
+  oldLauncher: String!
+  newLauncher: String!
+}
+
+type Bidding_OwnerChanged {
+  id: ID!
+  oldOwner: String!
+  newOwner: String!
+}
+
+type Bidding_PendingOwnerSet {
+  id: ID!
+  oldPendingOwner: String!
+  newPendingOwner: String!
+}
+
+type Bidding_Poolstate {
+  id: ID!
+  token: String!
+  eTHResever: BigInt!
+  tokenReserve: BigInt!
+  timestamp: Int!
+}
+
+type Bidding_PriceChanged {
+  id: ID!
+  token: String!
+  newPrice: BigInt!
+  circulatingSupply: BigInt!
+  timestamp: Int!
+}
+
+type Bidding_TokenCreate {
+  id: ID!
+  tokenAddress: String!
+  tokenIndex: BigInt!
+  creator: String!
+}
+
+type Bidding_TokenLaunched {
+  id: ID!
+  token: String!
+}
+
+type Bidding_TokenPurchased {
+  id: ID!
+  token: String!
+  buyer: String!
+  ethAmount: BigInt!
+  tokenAmount: BigInt!
+  tokenReserve: BigInt!
+}
+
+type Bidding_TokenSold {
+  id: ID!
+  token: String!
+  seller: String!
+  ethAmount: BigInt!
+  tokenAmount: BigInt!
+}
+
